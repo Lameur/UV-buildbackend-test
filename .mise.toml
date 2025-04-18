@@ -1,0 +1,25 @@
+#:schema https://github.com/jdx/mise/blob/main/schema/mise.json
+ min_version = "2025.2.8"
+
+ [settings]
+ experimental = false
+
+ [env]
+ # supports arbitrary env vars so mise can be used like direnv/dotenv
+ PROJECT_NAME = "{{ cwd | basename }}"
+
+ [tools]
+ ruby = "latest"
+ 'ubi:houseabsolute/omegasort' = 'latest'
+ 'ubi:houseabsolute/precious' = 'latest'
+ taplo = 'latest'
+ 'npm:prettier' = 'latest'
+ pre-commit = 'latest'
+ 'npm:markdownlint-cli' = 'latest'
+ typos = 'latest'
+ gum = "latest"
+ glow = "latest"
+ skate = "latest"
+
+ [task_config]
+ includes = ["./.mise/tasks.toml"]
