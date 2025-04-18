@@ -34,3 +34,8 @@
  depends = 'commit'
  run = 'git push'
  alias = 'gp'
+
+[tasks.build]
+description = "Build the project with uv"
+run = "uv build --release"
+alias = "b"
