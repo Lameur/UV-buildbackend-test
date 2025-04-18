@@ -1,0 +1,26 @@
+type = "lint"
+cmd = ["mypy"]
+include = ["**/*.py"]
+lint_flags = "--no-install-types --pretty --show-error-code-links --show-error-context --show-column-numbers --report-deprecated-as-note --sqlite-cache --html-report report/mypy"
+ok_exit_codes = 0
+expect_stderr = true
+
+[commands.ruff-format]
+type = "tidy"
+cmd = ["ruff", "format"]
+include = ["**/*.py"]
+ok_exit_codes = 0
+
+[commands.ruff-lint]
+type = "lint"
+cmd = ["ruff", "check"]
+include = ["**/*.py"]
+ok_exit_codes = 0
+
+[commands.flake8]
+type = "lint"
+cmd = ["flake8"]
+include = ["**/*.py"]
+lint_flags = "--doctests --count --statistics --format html --htmldir report/flake8"
+ok_exit_codes = 0
+expect_stderr = true
